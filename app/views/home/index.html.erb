@@ -1,0 +1,162 @@
+<style>
+.content {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+.example1 {
+  background: url('example1.jpg');
+  width: 256px;
+  height:256px;
+}
+.example2 {
+  background: url('example2.jpg');
+  width: 256px;
+  height:256px;
+}
+.example3 {
+  background: url('example3.jpg');
+  width: 256px;
+  height:256px;
+}
+.example4 {
+  background: url('example4.jpg');
+  width: 256px;
+  height:256px;
+}
+
+.welcome-card-container {
+  position: absolute;
+  width: 200px;
+  float:left;
+}
+.slider-container {
+  position: absolute;
+  float:left;
+  left:350px;
+}
+/* Image CSS within welcome card */
+.card-image-circular {
+  position:absolute;
+  right: 35px;
+  border-radius: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  vertical-align: baseline;
+  width: 160px;
+  height: 160px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+/* Welcome Card Css */
+.demo-card-wide.mdl-card {
+}
+
+
+.car-image-circular img {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	}
+
+.demo-card-wide > .mdl-card__title {
+  float:left;
+  color: #fff;
+/*  background-image: url(<%=image_url('bg.jpg')%>); */
+  background-color: rgba(24, 31, 47, 0.81);
+  height: 180px;
+  align: end;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+/* Image Card Css */
+  .demo-card-image.mdl-card2 {
+    width: 256px;
+    height: 256px;
+    background: black;
+  }
+  .demo-card-image > .mdl-card__actions {
+    height: 52px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .demo-card-image__filename {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.slider-container').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      adaptiveHeight: true
+    });
+  });
+</script>
+
+<div class="content">
+  <div class="welcome-card-container">
+    <div class="mdl-card mdl-shadow--8dp demo-card-wide">
+      <div class="mdl-card__title">
+        <h1 class="mdl-card__title-text">Welcome!</h1>
+        <div class="card-image-circular">
+          <%= image_tag "chadengle.jpg" %>
+        </div>
+      </div>
+      <div class="mdl-card__supporting-text">
+    Born and raised in Orange County, Chad has a vast and expansive knowledge of the area. After receiving his degree in Communication from the University of California Santa Barbara, he has worked in various capacities of the Real Estate industry since 2010. Known for his superlative communication skills and devoted ability to differentiate the needs of his clients, he is an asset to both buyers and sellers.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Read more...
+        </a>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">email</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="slider-container" >
+    <div class="mdl-card2 mdl-shadow--2dp demo-card-image">
+        <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename example1">Example 1</span>
+          </div>
+        </div>
+        <div class="mdl-card2 mdl-shadow--2dp demo-card-image">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename example2">Example 2</span>
+          </div>
+        </div>
+        <div class="mdl-card2 mdl-shadow--2dp demo-card-image">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename example3">Example 3</span>
+          </div>
+        </div>
+        <div class="mdl-card2 mdl-shadow--2dp demo-card-image">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename example4">Example 4</span>
+          </div>
+        </div>
+        <!--<div class="mdl-card2 mdl-shadow--2dp demo-card-image">
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename example5">Example 5</span>
+            <%= image_tag "bg.jpg", class: "mdl-card__media" %>
+          </div>
+        </div>-->
+      </div>
+</div>

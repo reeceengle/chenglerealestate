@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chad Engle Real Estate</title>
+  <%= stylesheet_link_tag "//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css" %>
+  <%= stylesheet_link_tag "https://storage.googleapis.com/code.getmdl.io/1.0.1/material.blue_grey-blue.min.css" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/icon?family=Material+Icons" %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%
+  @title = "Chad Engle Real Estate"
+  @links = ["Home",
+           "About",
+           "Listings",
+           "Contact"]
+  %>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button ripple">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+      <div class="mdl-layout-icon"></div>
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title"><%= @title %></span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <%@links.each do |link| %>
+            <%= link_to link,{}, class: "mdl-navigation__link  mdl-typography--text-uppercase"  %>
+          <%end%>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title"><%= image_tag("logo.png") %></span>
+      <nav class="mdl-navigation">
+        <%@links.each do |link| %>
+          <%= link_to link,{}, class: "mdl-navigation__link  mdl-typography--text-uppercase"  %>
+        <%end%>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div>
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer--left-section">
+        <div class="mdl-logo"><%= image_tag("logo.png") %></div>
+        <ul class="mdl-mini-footer--link-list">
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
